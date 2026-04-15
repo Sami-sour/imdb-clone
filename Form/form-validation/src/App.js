@@ -1,5 +1,7 @@
 import {useState} from "react";
 import './App.css';
+import { FaCheck } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 function App() {
 
@@ -46,7 +48,7 @@ function App() {
              {/* Validation */}
            {password.length > 0 && 
               <div className={`mt-3 text-sm space-y-1  ${!rules.length ? "block" : "hidden"}`}>
-              <p className={rules.length ? "text-green-600" : "text-red-700"}>{rules.length ? "✅" : "❌"}At Least 8 character</p>
+              <p className={rules.length ? "text-green-600" : "text-red-700"}>{rules.length ? <FaCheck className="text-green-700 inline mr-1"/> : <FaTimes className="text-red-700 inline mr-1"/>}At Least 8 character</p>
               <p className={rules.uppercase ? "text-green-600" : "text-red-700"}>{rules.uppercase ? "✅" : "❌"}One Uppercase Letter</p>
               <p className={rules.number ? "text-green-600" : "text-red-700"}>{rules.number ? "✅" : "❌"}One number</p>
               <p className={rules.special ? "text-green-600" : "text-red-700"}>{rules.special ? "✅" : "❌"}One special character</p>
